@@ -12,7 +12,7 @@ onSaveInstanceState(Bundle outState)
 ```
 public class MainActivity extends AppCompatActivity {
     @SaveStatesAnno("key")  //要保存的数据添加SaveStatesAnno  key是保存数据到Bundle用的key
-    String ss;
+    String dataToStore;
 }
 
 上面代码等价于
