@@ -21,15 +21,6 @@ public abstract class BaseAdapter extends ClassVisitor {
         super(api, cv)
     }
 
-    public void hook(AnnoedClassInfo info) {
-        if (info.hasOSS) {
-            hookWithOSS();
-        } else {
-            hookWithOutOSS(info);
-        }
-
-    }
-
     public void hookWithOutOSS(AnnoedClassInfo info) {
         MethodVisitor mv = cv.visitMethod(Opcodes.ACC_PUBLIC, "onSaveInstanceState", "(" + DescBundle + ")V", null, null);
         mv.visitCode();

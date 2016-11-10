@@ -12,7 +12,10 @@ public class SaveStateAdder {
 
     public static byte[] hook(File oldClazzFile,String path) {
         AnnoedClassInfo info = new AnnoedClassInfo();
-        info.ower(path.split("\\.")[0])
+        String temp = path.split("\\.")[0];
+        temp=temp.substring(1, temp.length());
+        temp=temp.replace("\\","/")
+        info.ower(temp)
         List<FiledInfo> result = new ArrayList<>();
         info.fileds(result);
         info.oldClazzFile(oldClazzFile);

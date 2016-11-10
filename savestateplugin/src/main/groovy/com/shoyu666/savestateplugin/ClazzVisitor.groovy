@@ -36,8 +36,8 @@ public class ClazzVisitor extends BaseAdapter {
 
     @Override
     public void visitEnd() {
-        if (info != null && info.annoedFileds.size() > 0) {
-            hook(info)
+        if (info != null && info.annoedFileds.size() > 0&&!info.hasOSS) {
+            hookWithOutOSS(info);
         }
         super.visitEnd();
     }
